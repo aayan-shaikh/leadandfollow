@@ -1,0 +1,19 @@
+{
+  "name": "leadandfollow",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro build && astro preview --host"
+  },
+  "dependencies": {
+    "astro": "^5.9.1",
+    "decap-cms-app": "^3.9.0",
+    "sass": "^1.89.1"
+  },
+  "trustedDependencies": [
+    "@parcel/watcher"
+  ]
+}
