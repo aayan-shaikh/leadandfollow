@@ -1,10 +1,10 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import CMS from "decap-cms-app";
 ---
 
 <BaseLayout>
   <script>
-    import CMS from "decap-cms-app";
     CMS.init();
     CMS.registerPreviewTemplate("my-template", MyTemplate);
   </script>

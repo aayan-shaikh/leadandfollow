@@ -10,10 +10,14 @@
   },
   "dependencies": {
     "astro": "^5.9.1",
+    "clean-stack": "^6.0.0",
     "decap-cms-app": "^3.9.0",
     "sass": "^1.89.1"
   },
   "trustedDependencies": [
     "@parcel/watcher"
-  ]
+  ],
+  "devDependencies": {
+    "vite-plugin-decap-cms": "^0.4.0"
+  }
 }
