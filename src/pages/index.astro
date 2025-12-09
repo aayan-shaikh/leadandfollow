@@ -1,7 +1,124 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/pages/home.scss";
 ---
 
-<BaseLayout title="Home | Kolibri">
-  <h1>Welcome to Lead and Follow India</h1>
+<BaseLayout title="Home | Lead and Follow India">
+  <main>
+    <img
+      id="hero-img"
+      src="/hero.webp"
+      alt="Suraj Verma, Lead and Follow India"
+      width="600"
+    />
+    <section id="hero">
+      <div class="hero-content">
+        <h1 class="hero-title">Welcome to Lead and Follow India</h1>
+        <h3 class="hero-subtitle">
+          Where <span class="hero-animate">Movement</span> Becomes Community.
+        </h3>
+        <h5 class="hero-subtitle-2">
+          A space for dance, fitness, art, and self-expression. Join a studio
+          built on passion, discipline, and heart.
+        </h5>
+        <div class="hero-btns">
+          <button>Book a class</button>
+          <button>Join our festival</button>
+          <button>Get a tattoo</button>
+          <button>Studio Rental</button>
+        </div>
+      </div>
+    </section>
+    <h2 class="about-title">About Us</h2>
+    <section id="about">
+      <div id="about-content">
+        <p>
+          Lead & Follow India is a multi-discipline studio offering dance
+          classes, fitness programs, kids training, and a professional tattoo
+          space — all under one roof. Founded by national-level dancers and
+          creators, our studio is home to real learning, real growth, and real
+          community.
+        </p>
+        <h3>What we offer</h3>
+        <div class="cards">
+          <div class="card">
+            Latin Dance
+            <p>Bachata • Salsa • Kizomba</p>
+          </div>
+          <div class="card">
+            Indian Dance & Fitness
+            <p>Bollywood • Bollywood Fitness • Zumba • Kids Dance</p>
+          </div>
+          <div class="card">
+            Wellness
+            <p>Yoga & Movement</p>
+          </div>
+          <div class="card">
+            Art
+            <p>Tattoo Studio (Minimal, Nature, Line Art)</p>
+          </div>
+          <div class="card">
+            Events
+            <p>Social Dance Nights, Workshops, Lead O’Latino Festival</p>
+          </div>
+        </div>
+      </div>
+      <img
+        src="/suraj-green.jpg"
+        alt="Suraj Verma Sitting Shot"
+        width="400px"
+      />
+    </section>
+    <section id="choose-us">
+      <h3>Why people choose us</h3>
+      <ol>
+        <li>17+ years of dance experience</li>
+        <li>International-level instructors</li>
+        <li>A safe and supportive environment</li>
+        <li>Beautiful, earthy studio space</li>
+        <li>Regular events and festivals</li>
+        <li>Community-driven learning approach</li>
+      </ol>
+    </section>
+    <section id="upcoming-events">
+      <h3>Upcoming Highlights</h3>
+      <ol class="marquee">
+        <li>Thursday Social + Romantic Choreo</li>
+        <li>Weekend Bachata Classes</li>
+        <li>New 3-month Bachata Course</li>
+        <li>Lead O’Latino Festival – Season 5</li>
+      </ol>
+    </section>
+
+    <h3>Gallery</h3>
+    <section id="gallery">
+      <div id="gallery-grid">
+        <img
+          width="500"
+          src="https://images.pexels.com/photos/270789/pexels-photo-270789.jpeg"
+          alt="Couple Dancing"
+        /><img
+          width="500"
+          src="https://images.pexels.com/photos/19187134/pexels-photo-19187134.jpeg"
+          alt="Bachata Sensual"
+        /><img
+          width="500"
+          src="https://images.pexels.com/photos/12312/pexels-photo-12312.jpeg"
+          alt=""
+        /><img
+          width="500"
+          src="https://images.pexels.com/photos/1701197/pexels-photo-1701197.jpeg"
+          alt=""
+        /><img
+          width="500"
+          src="https://images.pexels.com/photos/955938/pexels-photo-955938.jpeg"
+          alt=""
+        /><img
+          width="500"
+          src="https://images.pexels.com/photos/2928342/pexels-photo-2928342.jpeg"
+          alt=""
+        />
+      </div>
+    </section>
+  </main>
 </BaseLayout>

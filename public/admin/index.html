@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Content Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+        body {
+            margin: 0;
+            font-family: system-ui, sans-serif;
+        }
+    </style>
+
+    <!-- 1. Netlify Identity (remove if you don't use it) -->
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+
+    <!-- 2. Decap CMS core -->
+    <script src="https://unpkg.com/decap-cms@^3.9.0/dist/decap-cms.js"></script>
+</head>
+
+<body>
+    <!-- This script MUST be a normal (non-module) script and come AFTER decap-cms.js -->
+    <script>
+        // Wait for Decap CMS script is fully loaded
+        window.addEventListener("DOMContentLoaded", () => {
+            // Prevent Decap CMS from trying to load config.yml
+            window.CMS_MANUAL_INIT = true;
+
+            const config = {
+                // This works both in dev and production
+                local_backend: location.hostname === "localhost" || location.hostname === "127.0.0.1",
+
+                backend: {
+                    name: "git-gateway",     // change to "github", "gitlab", or "test-repo" if needed
+                    branch: "main",
+                },
+
+                media_folder: "/src/content/images",
+                // where files go in your repo
+                public_folder: "/content/images",                // how they appear on the site
+
+                collections: [
+                    {
+                        name: "pages",
+                        label: "Pages",
+                        folder: "src/content/pages",
+                        create: true,
+                        fields: [
+                            { label: "Title", name: "title", widget: "string" },
+                            { label: "Body", name: "body", widget: "markdown" },
+                        ],
+                    },
+                    // add more collections here
+                ],
+            };
+
+            // This works no matter if they expose window.CMS or window.Decap.CMS
+            window.Decap?.CMS?.init({ config }) || window.CMS?.init({ config });
+        });
+    </script>
+</body>
+
+</html>

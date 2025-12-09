@@ -1,15 +1,16 @@
 // Colors
-$primary: #2d6a4f;
-$secondary: #1b4332;
-$accent: #d62828;
+$primary: #472b57;
+$secondary: #fec550;
+$accent: #8b3596;
 $text-primary: #ffffff;
 $text-secondary: #f8f9fa;
-$text-dark: #212529;
-$background: #ffffff;
+$text-dark: #f8f9fa;
+// $text-dark: #212529;
+$background: $primary;
 $surface: #f8f9fa;
 
 // Typography
-$font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+$font-primary: 'Display', -apple-system, BlinkMacSystemFont, sans-serif;
 $font-secondary: 'Fira Sans', sans-serif;
 
 // Layout

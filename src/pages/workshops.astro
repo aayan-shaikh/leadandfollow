@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+const workshops = Object.values(
+  import.meta.glob("./workshops/*.md", { eager: true })
+).sort(
+  (a, b) =>
+    new Date(b.frontmatter.date).valueOf() -
+    new Date(a.frontmatter.date).valueOf()
+);
+---
+
+<BaseLayout>
+  <ul>
+    {
+      workshops.map((workshop) => (
+        <li>
+          <time datetime={workshop.frontmatter.date}>
+            {new Date(workshop.frontmatter.date).toLocaleString("en-uk", {
+              year: "numeric",
+              month: "short",
+              day: "numeric",
+            })}
+          </time>
+          <h3>{workshop.frontmatter.title}</h3>
+          <img src={workshop.frontmatter.img} alt="" height="500" width="500" />
+        </li>
+      ))
+    }
+  </ul>
+</BaseLayout>
