@@ -1,0 +1,86 @@
+@import '../core/variables';
+
+
+main {
+    background-color: adjust-color($color: $primary, $lightness: -10%, $alpha: 1.0);
+}
+
+#subtitle {
+    font-family: monospace;
+    position: relative;
+    padding: 0.5rem;
+    background-color: $accent;
+    max-width: fit-content;
+    border-radius: 7px;
+    text-align: center;
+
+    &::before {
+        content: "🖊️";
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        filter: drop-shadow(0px 10px 8px rgba(black, 0.7));
+
+    }
+
+}
+
+section {
+    border: 3px dashed $secondary;
+    border-radius: 10px;
+    padding: 2rem;
+
+
+    li {
+        font-family: monospace;
+        font-size: 0.9rem;
+    }
+
+    @media (max-width:767px) {
+        text-align: center;
+        padding: 1rem;
+
+        li {
+            line-height: 3;
+        }
+    }
+}
+
+#specialise {
+    li {}
+}
+
+#offer {
+    grid-column: span 2;
+    margin-bottom: 6rem;
+
+    button {
+        background-color: $secondary;
+        padding: 1rem;
+
+        &:hover {
+            background-color: $primary;
+
+        }
+    }
+
+    position: relative;
+
+    &::before {
+        content: "💸";
+
+        position: absolute;
+        top: -15px;
+        left: -15px;
+        font-size: 2.5rem;
+        filter: drop-shadow(0px 10px 10px rgba(black, 0.7));
+
+    }
+}
+
+.sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+
+}
