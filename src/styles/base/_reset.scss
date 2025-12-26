@@ -41,6 +41,7 @@ button {
   border: none;
   transition: background-color 0.2s ease;
   border-radius: 0.3rem;
+  font-size: inherit;
 
   &:hover {
     color: $text-primary;
