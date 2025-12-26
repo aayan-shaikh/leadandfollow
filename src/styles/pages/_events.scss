@@ -1,12 +1,12 @@
 @import '../core/variables';
 
 
-button {
-    padding: 1rem;
-    font-family: inherit;
-    font-size: inherit;
-    width: 100%;
 
+
+
+h1 {
+    backdrop-filter: blur(10px);
+    padding: 1rem;
 }
 
 h3 {
@@ -14,13 +14,69 @@ h3 {
     font-weight: 800;
 }
 
-#lead {
-    color: $primary;
+html {
+    --s: 132px;
+    /* control the size*/
+    --c1: #170220;
+    --c2: #ccae18;
 
+    --_g: #0000 24%,
+        var(--c2) 26% 34%, var(--c1) 36% 44%,
+        var(--c2) 46% 54%, var(--c1) 56% 64%,
+        var(--c2) 66% 74%, #0000 76%;
+    background:
+        radial-gradient(100% 100% at 100% 0, var(--_g)),
+        radial-gradient(100% 100% at 0 100%, var(--_g)),
+        radial-gradient(var(--c2) 14%, var(--c1) 16%) calc(var(--s)/2) calc(var(--s)/2) !important;
+    background-size: var(--s) var(--s) !important;
+
+}
+
+body {
+    background-color: rgba($color: #000000, $alpha: 0.5);
+
+}
+
+main {
+
+    // background-color: adjust-color($color: $secondary, $lightness: -30%, $alpha: 1.0, $saturation: -50%);
+    padding-inline: 10rem;
+
+    @media (max-width:767px) {
+        padding-inline: 1rem;
+
+    }
+}
+
+#lead {
+    button {
+        padding: 1rem;
+
+        font-family: inherit;
+        font-size: inherit;
+        width: 100%;
+
+    }
+
+    color: $primary;
+    border-radius: 10px;
+
+    img {
+        aspect-ratio: 16/9;
+        width: 100%;
+        height: 300px;
+        object-position: center 25%;
+        object-fit: cover;
+    }
 
     h3,
     p {
         color: $primary;
+    }
+
+    .desc {
+        font-size: 1.1rem;
+        margin-top: 1rem;
     }
 
     .subtitle {
@@ -37,6 +93,153 @@ h3 {
 
     &::before {
         content: "🌟";
+        position: absolute;
+        font-size: 4rem;
+        top: -40px;
+        left: -30px;
+        filter: drop-shadow(0px 10px 10px rgba(black, 0.5));
+
+
+    }
+
+    ul {
+        display: flex;
+        gap: 1rem;
+        margin-block: 1rem;
+
+        li {
+            font-weight: 500;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: $accent;
+            }
+        }
+    }
+}
+
+#workshops {
+    button {
+        padding: 1rem;
+
+        font-family: inherit;
+        font-size: inherit;
+        width: 100%;
+
+    }
+
+    margin-top: 2rem;
+    color: $secondary;
+    border-radius: 10px;
+
+    img {
+        aspect-ratio: 16/9;
+        width: 100%;
+        height: 300px;
+        object-position: center 25%;
+        object-fit: cover;
+    }
+
+    h3,
+    p {
+        color: $secondary;
+    }
+
+    .desc {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+    }
+
+    .subtitle {
+        font-family: monospace;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    background-color: $primary;
+    padding: 1rem;
+    box-shadow: 0px 20px 20px rgba($color: #000000, $alpha: 0.1);
+    position: relative;
+
+    &::before {
+        content: "👨🏻‍🏫";
+        position: absolute;
+        font-size: 4rem;
+        top: -40px;
+        right: 30px;
+        filter: drop-shadow(0px 10px 10px rgba(black, 0.5));
+
+
+    }
+
+    ul {
+        display: flex;
+        gap: 1rem;
+        margin-block: 1rem;
+
+        li {
+            font-weight: 500;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.2s ease;
+
+            &:hover {
+                color: $accent;
+            }
+        }
+    }
+}
+
+
+#socials {
+    button {
+        padding: 1rem;
+
+        font-family: inherit;
+        font-size: inherit;
+        width: 100%;
+
+    }
+
+    margin-block: 2rem;
+    color: $primary;
+    border-radius: 10px;
+
+    img {
+        aspect-ratio: 16/9;
+        width: 100%;
+        height: 300px;
+        object-position: center 25%;
+        object-fit: cover;
+    }
+
+    h3,
+    p {
+        color: $primary;
+    }
+
+    .desc {
+        font-size: 1.1rem;
+        margin-top: 1rem;
+    }
+
+    .subtitle {
+        font-family: monospace;
+        line-height: 1;
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+
+    background-color: $secondary;
+    padding: 1rem;
+    box-shadow: 0px 20px 20px rgba($color: #000000, $alpha: 0.1);
+    position: relative;
+
+    &::before {
+        content: "💃🏻";
         position: absolute;
         font-size: 4rem;
         top: -40px;
