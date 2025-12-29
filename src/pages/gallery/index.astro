@@ -1,0 +1,31 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+import "../../styles/pages/gallery/_gallery.scss";
+
+const images = await Astro.glob("/public/gallery-compressed/*.webp").then(
+  (files) => {
+    console.log(files);
+
+    return files.map((file) => file.default);
+  }
+);
+console.log(images);
+---
+
+<BaseLayout>
+  <h1>Our Pictures 📸</h1>
+  <section id="gallery">
+    {
+      images.map((image) => (
+        <img
+          class="gallery-img"
+          src={image.src}
+          alt={image.src}
+          width={image.width}
+          height={image.height}
+        />
+      ))
+    }
+  </section>
+</BaseLayout>
