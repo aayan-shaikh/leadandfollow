@@ -1,6 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import "../styles/pages/_home.scss";
+const images = await Astro.glob("/public/gallery-compressed/*.webp").then(
+  (files) => {
+    console.log(files);
+
+    return files.map((file) => file.default);
+  }
+);
 ---
 
 <BaseLayout title="Home | Lead and Follow India">
@@ -93,36 +100,17 @@ import "../styles/pages/_home.scss";
     <h3>Gallery</h3>
     <section id="gallery">
       <div id="gallery-grid">
-        <img
-          width="500"
-          src="https://images.pexels.com/photos/270789/pexels-photo-270789.jpeg"
-          alt="Couple Dancing"
-          loading="lazy"
-        /><img
-          width="500"
-          src="https://images.pexels.com/photos/19187134/pexels-photo-19187134.jpeg"
-          alt="Bachata Sensual"
-          loading="lazy"
-        /><img
-          width="500"
-          src="https://images.pexels.com/photos/12312/pexels-photo-12312.jpeg"
-          alt=""
-          loading="lazy"
-        /><img
-          width="500"
-          src="https://images.pexels.com/photos/1701197/pexels-photo-1701197.jpeg"
-          alt=""
-          loading="lazy"
-        /><img
-          width="500"
-          loading="lazy"
-          src="https://images.pexels.com/photos/955938/pexels-photo-955938.jpeg"
-          alt=""
-        /><img
-          width="500"
-          src="https://images.pexels.com/photos/2928342/pexels-photo-2928342.jpeg"
-          alt=""
-        />
+        {
+          images.map((image) => (
+            <img
+              width={image.width}
+              height={image.height}
+              src={image.src}
+              alt="Leadn And Follow Home Page Gallery Image"
+              loading="lazy"
+            />
+          ))
+        }
       </div>
     </section>
   </main>

@@ -1,0 +1,17 @@
+@import '../core/variables';
+
+.testi {
+    border-radius: 10px;
+    max-width: fit-content;
+
+    img {
+        border-radius: 50%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        max-width: 120px;
+    }
+}
+
+#testimonials {
+    display: flex;
+}

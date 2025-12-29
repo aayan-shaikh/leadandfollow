@@ -1,0 +1,13 @@
+@import '../core/variables';
+
+ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    li {
+        img {
+            max-width: 200px;
+            aspect-ratio: 1;
+        }
+    }
+}
